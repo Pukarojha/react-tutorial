@@ -1,20 +1,47 @@
-import React from "react";
+import React from 'react';
 import ReactDom from 'react-dom';
 
-//Nested Components
-
-
-function Greeting(){ //component
+function BookList(){
     return(
-        <div>
-            {/* components inside component */}
-            <Person/>  
-            <Message/>
-        </div>
+        <React.Fragment>
+            <h1>This is booklist.</h1>
+            <Book/>
+            <Book/>
+            <Book/>
+        </React.Fragment>
+    );
+}
+const Image=()=>{
+    return(
+        <React.Fragment>
+            <img src='https://images-na.ssl-images-amazon.com/images/I/51qqyWNHGIL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg' alt="" /> 
+        </React.Fragment>
+    );
+}
+const Book=()=>{
+    return(
+        <React.Fragment>
+            <Image/>
+            <Title/>
+            <Author/>
+        </React.Fragment>
     );
 }
 
-const Person = ()=> <h1>David Sams</h1>; //component
-const Message= ()=> <p>This is a message.</p> ; //component
+const Title=()=>{
+    return(
+        <React.Fragment>
+            <p>Life's Greatest Lesson.</p>
+        </React.Fragment>
+    );
+}
+const Author= ()=>{
+    return(
+        <React.Fragment>
+            <p>Micheal Oliver</p>
+        </React.Fragment>
+    );
+}
+    
 
-ReactDom.render(<Greeting/>, document.getElementById('root'));
+ReactDom.render(<BookList/>, document.getElementById('root'));
