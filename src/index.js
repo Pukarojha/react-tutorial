@@ -1,20 +1,20 @@
 import React from "react";
-import ReactDom from "react-dom";
+import ReactDom from 'react-dom';
 
-//stateless functional components= always returns jsx 
+//Nested Components
 
-// react with jsx
-//if you have more than one elements
-// function Greeting(){
-//     return <div>
-//         <h1>Myself Pukar and its my first components.</h1>
-//     </div>     
-// }
- 
-// react without jsx
-// for multiple elements
-const Greeting= ()=>{
-    return React.createElement('div', {}, React.createElement('h1', {}, 'its multiple element, component without jsx'));
+
+function Greeting(){ //component
+    return(
+        <div>
+            {/* components inside component */}
+            <Person/>  
+            <Message/>
+        </div>
+    );
 }
+
+const Person = ()=> <h1>David Sams</h1>; //component
+const Message= ()=> <p>This is a message.</p> ; //component
 
 ReactDom.render(<Greeting/>, document.getElementById('root'));
