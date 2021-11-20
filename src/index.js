@@ -1,47 +1,33 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React from "react";
+import reactDom from "react-dom";
+import './index.css';
 
-function BookList(){
-    return(
-        <React.Fragment>
-            <h1>This is booklist.</h1>
-            <Book/>
-            <Book/>
-            <Book/>
-        </React.Fragment>
-    );
+function BookList() {
+  return(
+  <div className="abt">
+    <Book/>
+    <Book/>
+    <Book/>
+    <Book/>
+    <Book/>
+    <Book/>
+  </div>
+  );
 }
-const Image=()=>{
-    return(
-        <React.Fragment>
-            <img src='https://images-na.ssl-images-amazon.com/images/I/51qqyWNHGIL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg' alt="" /> 
-        </React.Fragment>
-    );
+const Book= ()=> {
+  return(
+    <React.Fragment>
+      <div className= "book">
+      <Img/>
+      <Title/>
+      <Author/>
+      </div>
+    </React.Fragment>
+  )
 }
-const Book=()=>{
-    return(
-        <React.Fragment>
-            <Image/>
-            <Title/>
-            <Author/>
-        </React.Fragment>
-    );
-}
+const Img= ()=> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm94576P8Pdi5m9n4c2V5IIXl3wYsWjxndnQ&usqp=CAU" alt="" srcset="" />;
+const Author= ()=> <p>Himanshu.</p>;
+const Title= ()=> <h3>Love you Moon and the back.</h3>;
 
-const Title=()=>{
-    return(
-        <React.Fragment>
-            <p>Life's Greatest Lesson.</p>
-        </React.Fragment>
-    );
-}
-const Author= ()=>{
-    return(
-        <React.Fragment>
-            <p>Micheal Oliver</p>
-        </React.Fragment>
-    );
-}
-    
 
-ReactDom.render(<BookList/>, document.getElementById('root'));
+reactDom.render(<BookList />, document.getElementById("root"));
